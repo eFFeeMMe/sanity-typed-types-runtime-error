@@ -4,6 +4,9 @@
   "version": "1.0.0",
   "main": "package.json",
   "license": "UNLICENSED",
+  "engines": {
+    "node": "18.17.1"
+  },
   "scripts": {
     "dev": "sanity dev",
     "start": "sanity start",
@@ -15,6 +18,7 @@
     "sanity"
   ],
   "dependencies": {
+    "@sanity-typed/types": "^4.0.4",
     "@sanity/vision": "^3.15.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
