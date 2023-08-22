@@ -1,9 +1,16 @@
-# Sanity Clean Content Studio
+1. `pnpm build; pnpm start`
+2. Browse [localhost:3333](localhost:3333)
+3. You should run into the following runtime error:
 
-Congratulations, you have now installed the Sanity Content Studio, an open source real-time content editing environment connected to the Sanity backend.
+```
+Uncaught error: de.default.div is not a function
+http://localhost:3333/static/sanity-36aff67c.js:4224:40135
+TypeError: de.default.div is not a function
+    at http://localhost:3333/static/sanity-36aff67c.js:4224:40135
+    at http://localhost:3333/static/sanity-36aff67c.js:6947:53991
+```
 
-Now you can do the following things:
-
-- [Read “getting started” in the docs](https://www.sanity.io/docs/introduction/getting-started?utm_source=readme)
-- [Join the community Slack](https://slack.sanity.io/?utm_source=readme)
-- [Extend and build plugins](https://www.sanity.io/docs/content-studio/extending?utm_source=readme)
+To check whether this is a fluke:
+1. `git checkout without-sanity-typed-types; pnpm build; pnpm start`
+2. Browse [localhost:3333](localhost:3333)
+3. You shouldn't get a runtime error
